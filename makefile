@@ -10,4 +10,6 @@ createdb:
 	docker exec -it postgres12 createdb --username=root --owner=root simple_bank
 sqlc:
 	sqlc generate
-.PHONY: postgres migrateup migratedown dropdb createdb
+test:
+	go test -v -cover ./...
+.PHONY: postgres migrateup migratedown dropdb createdb test 
